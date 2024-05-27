@@ -8,7 +8,7 @@ MODULENAME := cpu-freqency
 obj-m += cpu-freqency.o
 
 # Default target
-all: module app
+all: module
 
 # Build the kernel module
 module:
@@ -17,6 +17,6 @@ module:
 # Clean up
 clean:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
-	rm -f $(APP_OBJ) $(MODULENAME).ko
+	rm -f $(MODULENAME).ko
 
 .PHONY: all module clean
